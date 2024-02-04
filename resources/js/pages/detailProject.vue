@@ -27,23 +27,24 @@ export default {
 <template>
     <div class="cont-detail p-4 text-center">
         <h2>{{ detailProject.name }}</h2>
-        <div v-if="detailProject.cover_image" class="card-image">
+        <div class="card-image">
             <img :src="detailProject.cover_image" :alt="detailProject.name" />
         </div>
         <div class="card-body">
             <p>{{ detailProject.client_name }}</p>
-            <p>{{ detailProject.summary }}</p>
+            <p v-html="detailProject.summary"></p>
             <span
-                v-if="detailProject.techs"
                 v-for="tech in detailProject.techs"
+                :key="tech.id"
                 class="badge text-bg-info me-2"
                 >{{ tech.name }}</span
             >
             <span
                 v-if="detailProject.category"
                 class="badge text-bg-warning d-block w-25 m-auto mt-2"
-                >{{ detailProject.category.name }}</span
             >
+                {{ detailProject.category.name }}
+            </span>
         </div>
     </div>
 </template>

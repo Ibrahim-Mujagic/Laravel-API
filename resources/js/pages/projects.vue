@@ -34,7 +34,7 @@ export default {
             <div class="card-title p-2">
                 <h2>{{ project.name }}</h2>
             </div>
-            <div v-if="project.cover_image" class="card-image">
+            <div class="card-image">
                 <img :src="project.cover_image" :alt="project.name" />
             </div>
             <div class="card-body">
